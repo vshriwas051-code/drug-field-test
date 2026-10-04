@@ -1,14 +1,20 @@
 import { ArrowLeft, ShieldCheck, MapPin, Printer, Download, Clock } from 'lucide-react';
 import { Link, useParams } from 'react-router';
-
+import { useRef } from 'react';
+import generatePDF from 'react-to-pdf';
 
 export function RecordDetail() {
   const { id } = useParams();
+  const targetRef = useRef<HTMLDivElement>(null);
+
+  const handleDownloadPdf = () => {
+    generatePDF(targetRef, { filename: `ChromaSeal_Evidence_${id || 'CT-D7K2-01285'}.pdf` });
+  };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-20">
+    <div ref={targetRef} className="max-w-4xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-20 bg-bg">
       <div className="flex items-center gap-4 mb-6">
-        <Link to="/records" className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-2 text-muted hover:text-text transition-colors">
+        <Link to="/records" data-html2canvas-ignore="true" className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-2 text-muted hover:text-text transition-colors">
           <ArrowLeft className="w-5 h-5" />
         </Link>
         <div>
@@ -20,11 +26,11 @@ export function RecordDetail() {
           </div>
           <p className="text-muted text-sm mt-1">Sealed Field Evidence Record</p>
         </div>
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex items-center gap-2" data-html2canvas-ignore="true">
           <button className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-2 text-muted hover:text-text transition-colors">
             <Printer className="w-5 h-5" />
           </button>
-          <button className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-2 text-muted hover:text-text transition-colors">
+          <button onClick={handleDownloadPdf} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-2 text-muted hover:text-text transition-colors">
             <Download className="w-5 h-5" />
           </button>
         </div>
