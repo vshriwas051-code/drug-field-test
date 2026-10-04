@@ -1,0 +1,14 @@
+{
+  "name": "@chromaseal/core",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@noble/curves": "^1.4.0",
+    "@noble/hashes": "^1.4.0",
+    "canonicalize": "^2.0.0",
+    "zod": "^3.23.8"
+  }
+}

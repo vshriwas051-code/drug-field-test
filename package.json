@@ -1,0 +1,27 @@
+{
+  "name": "chromaseal",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @chromaseal/server\" \"npm run dev -w @chromaseal/web\"",
+    "db:reset": "npm run db:reset -w @chromaseal/server",
+    "test": "vitest",
+    "e2e": "playwright test",
+    "build": "npm run build -ws --if-present"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "js-aruco2": "^2.0.0",
+    "jsdom": "^29.1.1",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.5",
+    "vitest": "^5.0.3"
+  }
+}
