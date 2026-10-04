@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Camera, CheckCircle2, FlaskConical, MapPin } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { useNewTestStore } from './store';
 import { useNavigate } from 'react-router';
 import { cn } from '../../app/Layout';

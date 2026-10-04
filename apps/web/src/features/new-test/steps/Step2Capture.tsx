@@ -1,5 +1,5 @@
 import { useNewTestStore } from '../store';
-import { Camera, Image as ImageIcon, Upload, ArrowRight, Zap, RefreshCw } from 'lucide-react';
+import { Camera, Image as ImageIcon, Upload, Zap, RefreshCw } from 'lucide-react';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { cn } from '../../../app/Layout';
 

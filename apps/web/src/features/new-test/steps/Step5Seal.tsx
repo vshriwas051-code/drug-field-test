@@ -1,5 +1,5 @@
 import { useNewTestStore } from '../store';
-import { Shield, CheckCircle2, Download, ExternalLink, QrCode } from 'lucide-react';
+import { Shield, CheckCircle2, Download, ExternalLink } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { cn } from '../../../app/Layout';

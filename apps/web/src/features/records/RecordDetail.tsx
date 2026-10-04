@@ -1,6 +1,6 @@
 import { ArrowLeft, ShieldCheck, MapPin, Printer, Download, Clock } from 'lucide-react';
 import { Link, useParams } from 'react-router';
-import { cn } from '../../app/Layout';
+
 
 export function RecordDetail() {
   const { id } = useParams();
